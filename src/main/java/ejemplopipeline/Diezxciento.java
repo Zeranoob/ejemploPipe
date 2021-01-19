@@ -17,12 +17,26 @@ public class Diezxciento {
 	
 	public int diezxciento(){
 		double diezxciento = ahorro * 0.1;
-		System.out.println(diezxciento);
+		
+		if(ahorro < 1000000){
+			return ahorro;
+		}
+				
 		return (int) diezxciento;
 	}
 	
-	public int impuesto(){
-		return 0;
+	public int impuesto(){		
+		if(sueldo<500000){
+			return 0;
+		}else if(sueldo>= 500000 && sueldo < 1000000){			
+			return (int) ((double)ahorro * 0.015);
+		}else if(sueldo>= 1000000 && sueldo < 2000000){
+			return (int) ((double)ahorro * 0.05);
+		}else if(sueldo>= 2000000 && sueldo < 6000000){
+			return (int) ((double)ahorro * 0.1);
+		}else{
+			return (int) ((double)ahorro * 0.15);
+		}		
 	}
 	
 	public int saldoAhorro() {
